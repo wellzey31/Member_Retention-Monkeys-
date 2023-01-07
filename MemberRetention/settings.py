@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tailwind',
+    'mytheme',
 ]
 
 SITE_ID = 1
 
 SITE_URL = 'http://localhost:8000'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
