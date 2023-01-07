@@ -7,6 +7,15 @@ from django.contrib import messages
 def hello(request):
     return render(request, 'hello.html')
 
+def homepage_view(request):
+    if request.user.is_authenticated:
+        # The user is logged in
+        username = request.user.username
+        return render(request, 'homepage.html', {'username': username})
+    else:
+        # The user is not logged in
+        return render(request, 'login.html')
+
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -14,7 +23,7 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("main:homepage")
+			return redirect('homepage/')
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="myapp/register.html", context={"register_form":form})
