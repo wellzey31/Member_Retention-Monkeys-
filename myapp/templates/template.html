@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>The queryset object:</p>
+
+{{ customers }}
+
+<p>Loop through the items:</p>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in customers %}
+    <tr>
+      <td>{{ x.LastName }}</td>
+      <td>{{ x.FirstName }}</td>
+      <td>{{ x.AccountNumber }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>       

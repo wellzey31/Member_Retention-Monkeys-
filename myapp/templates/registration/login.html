@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+    {% load static %}
 
 <head>
     <!-- Required meta tags -->
@@ -12,7 +13,7 @@
     <title>Login</title>
 </head>
 
-<body style="background-color: white;">
+<body style="background-color: grey;">
 
     {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
@@ -20,9 +21,10 @@
 
     <div class="card bg-light mx-auto pt-2 my-5 pl-3" style="width: 30rem;">
         <div class="card-body">
+            <img src="{% static 'servus-website.png' %}" alt="image" class="mx-auto pr-5 d-block">
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
-                <table>
+                <table class="mx-auto mt-5" style="width: 80%;">
                     <tr>
                         <td>{{ form.username.label_tag }}</td>
                         <td>{{ form.username }}</td>
@@ -33,7 +35,7 @@
                     </tr>
                 </table>
 
-                <input type="submit" value="Log in" />
+                <input type="submit" value="Log in" class="btn btn-primary mt-3 mx-auto d-block"/>
                 <input type="hidden" name="next" value="{% url 'customers' %}" />
             </form>
         </div>
