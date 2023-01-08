@@ -36,13 +36,14 @@
                     <th>Net Worth</th>
                     <th>Total Liabilities</th>
                     <th>Credit Score</th>
-                    <th>Account Active</th>
+                    <!-- <th>Account Active</th> -->
+                    <th>Risk</th>
                 </tr>
             </thead>
             <tbody>
                 {% for customer in customers %}
                 <tr>
-                    <td>{{ customer.AccountNumber }}</td>
+                    <td>#{{ customer.AccountNumber }}</td>
                     <td>{{ customer.FirstName }}</td>
                     <td>{{ customer.LastName }}</td>
                     <td>{{ customer.Email }}</td>
@@ -50,18 +51,19 @@
                     <td>{{ customer.Age }}</td>
                     <td>{{ customer.MemberSince }}</td>
                     <td>{{ customer.Occupation }}</td>
-                    <td>{{ customer.Income }}</td>
+                    <td>${{ customer.Income }}</td>
                     <td>{{ customer.MaritalStatus }}</td>
                     <td>{{ customer.City }}</td>
                     <td>{{ customer.Education }}</td>
                     <td>{{ customer.NumAccounts }}</td>
-                    <td>{{ customer.AvgAccountValue }}</td>
-                    <td>{{ customer.AvgCreditRate }}</td>
-                    <td>{{ customer.AvgInvestmentRate }}</td>
-                    <td>{{ customer.NetWorth }}</td>
-                    <td>{{ customer.TotalLiabilities }}</td>
+                    <td>${{ customer.AvgAccountValue }}</td>
+                    <td>{{ customer.AvgCreditRate }}%</td>
+                    <td>{{ customer.AvgInvestmentRate }}%</td>
+                    <td>${{ customer.NetWorth }}</td>
+                    <td>${{ customer.TotalLiabilities }}</td>
                     <td>{{ customer.CreditScore }}</td>
-                    <td>{% if customer.AccountActive %}Yes{% else %}No{% endif %}</td>
+                    <!-- <td>{% if customer.AccountActive %}Yes{% else %}No{% endif %}</td> -->
+                    <td>{{ customer.Risk }}%</td>
                 </tr>
                 {% endfor %}
             </tbody>

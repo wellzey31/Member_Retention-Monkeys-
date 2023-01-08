@@ -34,3 +34,5 @@ class CustomerListView(ListView):
     model = Customer
     context_object_name = 'customers'
     template_name = 'customers.html'
+
+    ordering = ['-Risk']

@@ -22,6 +22,7 @@ class Customer(models.Model):
     CreditScore = models.PositiveIntegerField()
     MemberSince = models.DateField()
     AccountActive = models.BooleanField()
+    Risk = models.DecimalField(max_digits=5, decimal_places=2)
     def __str__(self):
         return self.FirstName
 
