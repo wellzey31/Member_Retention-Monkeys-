@@ -3,6 +3,7 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from myapp.models import Customer
+from django.views.generic import ListView
 
 # Create your views here.
 def hello(request):
@@ -12,8 +13,7 @@ def homepage_view(request):
     if request.user.is_authenticated:
         # The user is logged in
         username = request.user.username
-        customers = Customer.objects.all()
-        return render(request, 'homepage.html', {'username': username}, {'customers': customers})
+        return redirect('customers/')
     else:
         # The user is not logged in
         return render(request, 'login.html')
@@ -25,8 +25,12 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect('homepage/')
+			return redirect('customers/')
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="myapp/register.html", context={"register_form":form})
 
+class CustomerListView(ListView):
+    model = Customer
+    context_object_name = 'customers'
+    template_name = 'customers.html'
