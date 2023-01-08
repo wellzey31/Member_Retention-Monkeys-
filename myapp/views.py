@@ -2,6 +2,7 @@ from django.shortcuts import  render, redirect
 from .forms import NewUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
+from .models import Customer
 
 # Create your views here.
 def hello(request):
@@ -28,14 +29,6 @@ def register_request(request):
 	form = NewUserForm()
 	return render (request=request, template_name="myapp/register.html", context={"register_form":form})
 
-def valid_login(request):
-	userid = request.POST['username']
-	password = request.POST['password']
-	user = authenticate(request, username=userid, password=password)
-	
-	if user is not None:
-		login(request, user)
-	else:
-		print("Your username and password didn't match. Please try again.")
-
-	return redirect('homepage/')
+def customer_list(request):
+    customers = Customer.objects.all()
+    return render(request, 'customers.html', {'customers': customers})
