@@ -9,14 +9,22 @@
     <title>Homepage</title>
 </head>
 
-<body>
-    <div class="mx-auto p-5">
-        <h1>Welcome to our website, {{ user.username }}!</h1>
-        <p> Lorem Ipsum </p>
+<body style="background-color: #C7C8CA;">
 
-        <table class="table table-striped">
-            <thead>
+    <div class="mx-auto px-5 text-center">
+        <div class="mx-auto p-3" style="color: #ffffff; background-color: #0072BC;">
+            <div class="px-5 pt-2 mx-auto text-right">
+                <p style="color: #ffffff;">Hello, {{user.username}}! <a href="#" class="text-white">Account</a></p>
+            </div>
+            <div>
+                <h2>Member Retention Data</h2>
+                <h4>Customers with a high risk of leaving</h4>
+            </div>
+        </div>
+        <table class=" table table-striped table-sm " style="background-color: #ffffff;">
+            <thead class="mx-2" style=" background-color: #0072BC; color: #ffffff;">
                 <tr>
+                    <th>Risk</th>
                     <th>Account Number</th>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -37,12 +45,13 @@
                     <th>Total Liabilities</th>
                     <th>Credit Score</th>
                     <!-- <th>Account Active</th> -->
-                    <th>Risk</th>
+
                 </tr>
             </thead>
             <tbody>
                 {% for customer in customers %}
                 <tr>
+                    <td>{{ customer.Risk }}%</td>
                     <td>#{{ customer.AccountNumber }}</td>
                     <td>{{ customer.FirstName }}</td>
                     <td>{{ customer.LastName }}</td>
@@ -63,19 +72,17 @@
                     <td>${{ customer.TotalLiabilities }}</td>
                     <td>{{ customer.CreditScore }}</td>
                     <!-- <td>{% if customer.AccountActive %}Yes{% else %}No{% endif %}</td> -->
-                    <td>{{ customer.Risk }}%</td>
+
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
 
-
-        <p>Thank you for visiting our homepage.</p>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
 </body>
 
 </html>
