@@ -1,0 +1,80 @@
+Airdrie
+Beaumont	
+Brooks
+Calgary
+Camrose
+Chestermere
+Cold Lake
+Edmonton
+Fort Saskatchewan
+Grande Prairie
+Lacombe
+Leduc
+Lethbridge
+Lloydminster
+Medicine Hat
+Red Deer
+Spruce Grove
+St. Albert
+Wetaskiwin
+Athabasca
+Banff
+Barrhead
+Bashaw
+Beaverlodge
+Bentley
+Blackfalds
+Bonnyville
+Canmore
+Cardston
+Carstairs
+Castor
+Claresholm
+Coaldale
+Coalhurst
+Cochrane
+Coronation
+Crossfield
+Daysland
+Devon
+Diamond Valley
+Didsbury
+Drayton Valley
+Drumheller
+Eckville
+Edson
+Elk Point
+Fairview
+Fort Macleod
+Hanna
+High Level
+High River
+Innisfail
+Irricana
+Magrath
+Morinville
+Nanton
+Nobleford
+Okotoks
+Olds
+Onoway
+Oyen
+Peace River
+Picture Butte
+Pincher Creek
+Ponoka
+Raymond
+Slave Lake
+St. Paul
+Stony Plain
+Strathmore
+Sundre
+Taber
+Thorsby
+Two Hills
+Vauxhall
+Vegreville
+Vermilion
+Vulcan
+Wainwright
+Whitecourt

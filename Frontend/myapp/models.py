@@ -8,9 +8,7 @@ class Customer(models.Model):
     Email = models.EmailField()
     Phone = models.CharField(max_length=50)
     Age = models.PositiveIntegerField()
-    MemberSince = models.DateField()
     Occupation = models.CharField(max_length=50)
-    Income = models.PositiveIntegerField()
     MaritalStatus = models.CharField(max_length=50)
     City = models.CharField(max_length=50)
     Education = models.CharField(max_length=50)
@@ -19,8 +17,10 @@ class Customer(models.Model):
     AvgCreditRate = models.DecimalField(max_digits=5, decimal_places=2)
     AvgInvestmentRate = models.DecimalField(max_digits=5, decimal_places=2)
     NetWorth = models.DecimalField(max_digits=10, decimal_places=2)
+    Income = models.PositiveIntegerField()
     TotalLiabilities = models.DecimalField(max_digits=10, decimal_places=2)
     CreditScore = models.PositiveIntegerField()
+    MemberSince = models.DateField()
     AccountActive = models.BooleanField()
     def __str__(self):
         return self.FirstName
