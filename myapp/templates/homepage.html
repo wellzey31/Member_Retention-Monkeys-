@@ -14,6 +14,60 @@
         <h1>Welcome to our website, {{ username }}!</h1>
         <p> Lorem Ipsum </p>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Age</th>
+                    <th>Member Since</th>
+                    <th>Occupation</th>
+                    <th>Income</th>
+                    <th>Marital Status</th>
+                    <th>City</th>
+                    <th>Education</th>
+                    <th>Number of Accounts</th>
+                    <th>Average Account Value</th>
+                    <th>Average Credit Rate</th>
+                    <th>Average Investment Rate</th>
+                    <th>Net Worth</th>
+                    <th>Total Liabilities</th>
+                    <th>Credit Score</th>
+                    <th>Account Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.AccountNumber }}</td>
+                    <td>{{ customer.FirstName }}</td>
+                    <td>{{ customer.LastName }}</td>
+                    <td>{{ customer.Email }}</td>
+                    <td>{{ customer.Phone }}</td>
+                    <td>{{ customer.Age }}</td>
+                    <td>{{ customer.MemberSince }}</td>
+                    <td>{{ customer.Occupation }}</td>
+                    <td>{{ customer.Income }}</td>
+                    <td>{{ customer.MaritalStatus }}</td>
+                    <td>{{ customer.City }}</td>
+                    <td>{{ customer.Education }}</td>
+                    <td>{{ customer.NumAccounts }}</td>
+                    <td>{{ customer.AvgAccountValue }}</td>
+                    <td>{{ customer.AvgCreditRate }}</td>
+                    <td>{{ customer.AvgInvestmentRate }}</td>
+                    <td>{{ customer.NetWorth }}</td>
+                    <td>{{ customer.TotalLiabilities }}</td>
+                    <td>{{ customer.CreditScore }}</td>
+                    <td>{% if customer.AccountActive %}Yes{% else %}No{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
         <p>Thank you for visiting our homepage.</p>
     </div>
 
