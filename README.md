@@ -1,8 +1,11 @@
 # Member_Retention-Monkeys-
 Hacked 2023 working repo
 
-## Frontend
+## Frontend/
 - Django Web-app
 
-## DataGen
+## DataGen/
 - Golang tool for generating datasets
+
+## ML/
+- Machine learning resources
