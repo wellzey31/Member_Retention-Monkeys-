@@ -1,12 +1,7 @@
 from django.db import models
-import os
-import django
 
 # Create your models here.
 class Customer(models.Model):
-    class Meta:
-        app_label = 'myapp'
-
     AccountNumber = models.CharField(max_length=50)
     FirstName = models.CharField(max_length=50)
     LastName = models.CharField(max_length=50)
@@ -27,6 +22,8 @@ class Customer(models.Model):
     TotalLiabilities = models.DecimalField(max_digits=10, decimal_places=2)
     CreditScore = models.PositiveIntegerField()
     AccountActive = models.BooleanField()
+    def __str__(self):
+        return self.FirstName
 
 
 
