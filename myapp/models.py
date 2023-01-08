@@ -1,4 +1,6 @@
 from django.db import models
+import os
+import django
 
 # Create your models here.
 class Customer(models.Model):
@@ -25,4 +27,6 @@ class Customer(models.Model):
     TotalLiabilities = models.DecimalField(max_digits=10, decimal_places=2)
     CreditScore = models.PositiveIntegerField()
     AccountActive = models.BooleanField()
+
+
 
