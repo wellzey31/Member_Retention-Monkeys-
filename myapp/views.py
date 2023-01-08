@@ -32,16 +32,3 @@ def register_request(request):
 def customer_list(request):
     customers = Customer.objects.all()
     return render(request, 'customers.html', {'customers': customers})
-
-def valid_login(request):
-	userid = request.POST['username']
-	password = request.POST['password']
-	user = authenticate(request, username=userid, password=password)
-	
-	if user is not None:
-		login(request, user)
-	else:
-		print("Your username and password didn't match. Please try again.")
-
-	return redirect('homepage/')
-
